@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --colorLight: #ffffff;
+  --colorDark: #2f3645;
+  --colorDarkTransparent1: #2f3645b3;
+  --colorDarkTransparent2: #767a81de;
+}
+
+* {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*----- Nav -----*/
+
+nav {
+  z-index: 4;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 40px;
+  transition: background-color 1s;
+}
+
+.nav-menu {
+  display: flex;
+  width: 300px;
+  justify-content: space-around;
+}
+
+.nav-item {
+  list-style-type: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #ffffff;
+  text-shadow: 1px 1px #808080, 2px 3px #000000;
+}
+
+/*----- Index -----*/
+
+.header-main {
+  background: url(/assets/img/fondo.jpg) 50% 0 fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#header-h {
+  background-image: url(/assets/img/historia-programacion.jpg);
+  position: relative;
+  height: 70vh;
+}
+
+#header-j {
+  background-image: url(/assets/img/img2.jpg);
+  position: relative;
+  height: 70vh;
+}
+
+.header-title {
+  text-align: center;
+}
+
+.background {
+  background: rgba(47, 54, 69, 0.7);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: calc(3em + 18px);
+  color: #ffffff;
+  text-shadow: 2px 2px #808080, 6px 6px #000000;
+}
+
+main {
+  padding: 100px 20px;
+}
+
+h2 {
+  text-shadow: 1px 1px #ffffff, 2px 2px #808080;
+  font-size: calc(2em + 18px);
+  font-weight: 500;
+  text-align: center;
+  color: var(--colorDark);
+}
+
+.content-wrapper {
+  margin: 100px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.content-card {
+  width: 450px;
+  height: 500px;
+  gap: 40px;
+  background-color: var(--colorLight);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-img {
+  width: 100%;
+  margin: 0px;
+}
+
+.card-descrip {
+  width: 90%;
+  text-align: center;
+  height: 30px;
+  color: #181d31;
+}
+
+.card-btn {
+  padding: 10px;
+  background-color: var(--colorDark);
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+/*----- History -----*/
+
+.history-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.history-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 80px 50px;
+  gap: 20px;
+}
+
+.history-card > img {
+  width: 50%;
+}
+
+.text-section-card {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.history-text {
+  color: var(--colorDark);
+}
+
+.dark {
+  color: #181d31;
+  text-shadow: 2px 2px #808080, 3px 3px #ffffff;
+}
+
+.container-video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0px;
+  gap: 80px;
+}
+
+.container {
+  padding: 5px;
+  background-color: var(--colorDark);
+  width: 70%;
+}
+
+video {
+  object-fit: contain;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.bar {
+  background-color: var(--colorDark);
+  border-radius: 10px;
+  padding: 20px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonBox {
+  display: flex;
+  gap: 20px;
+}
+
+#play,
+#pause {
+  width: 80px;
+}
+
+.buttonV {
+  box-shadow: 2px 2px #808080;
+  padding: 10px 15px;
+  text-decoration: none;
+  background-color: var(--colorLight);
+  color: var(--colorDark);
+  font-weight: 300;
+  border: 1px solid var(--colorDark);
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+#displayTime {
+  padding-right: 10px;
+  font-family: sans-serif;
+  color: #ffffff;
+}
+
+/*----- Game -----*/
+
+.puzzle-title {
+  padding: 80px 10px;
+}
+
+.box-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.boxs {
+  display: flex;
+  flex-direction: row;
+}
+
+.box {
+  width: 275px;
+  height: 400px;
+  display: flex;
+  border: 2px solid #000000;
+  background-color: #808080;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#box-img {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 40px;
+}
+
+#imgOne,
+#imgTwo,
+#imgThree {
+  width: 275px;
+  height: 400px;
+}
+
+.reboot {
+  display: flex;
+  margin: auto;
+  padding: 10px 100px;
+  border: none;
+  border-radius: 0px;
+  background-color: var(--colorDark);
+  color: var(--colorLight);
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+/*----- Footer -----*/
+
+footer {
+  background: var(--colorDark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 90px;
+  color: #ffffff;
+}
+
+.footer-left {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  height: 60px;
+}
+
+.footer-logo {
+  height: 80px;
+}
+
+.sub-title {
+  text-align: center;
+}
+
+.footer-title {
+  font-size: 14px;
+}
