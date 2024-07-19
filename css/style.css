@@ -24,12 +24,16 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 40px;
-  transition: background-color 1s;
+  padding: 25px;
+  transition: background-color 0.7s;
+}
+
+nav.changeNav {
+  background: #ffffff;
 }
 
 .change-nav {
-  background-color: var(--colorLight);
+  background-color: transparent; /*var(--colorLight)*/
 }
 
 .changeNav .nav-menu .nav-item .nav-link {
@@ -65,6 +69,8 @@ nav {
   color: #ffffff;
   text-shadow: 1px 1px #808080, 2px 3px #000000;
 }
+
+/* :hover */
 
 /*----- Index -----*/
 
