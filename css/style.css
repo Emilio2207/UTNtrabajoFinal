@@ -71,6 +71,13 @@ nav.changeNav {
 }
 
 /* :hover */
+.nav-item:hover {
+  transform: translate(3px, 2px);
+}
+
+.nav-item:hover > .nav-link {
+  text-shadow: 0.5px 0.5px var(--colorDark);
+}
 
 /*----- Index -----*/
 
