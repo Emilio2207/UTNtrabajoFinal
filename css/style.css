@@ -70,13 +70,86 @@ nav.changeNav {
   text-decoration: none;
 }
 
+/* logo */
+.noteA {
+  animation: sec_A ease-in 5s;
+  animation-iteration-count: 1;
+}
+
+.noteB {
+  animation: sec_B ease-in 5s;
+  animation-iteration-count: 1;
+}
+
+line.log {
+  animation-name: logType;
+  animation-delay: 2s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes sec_A {
+  0% {
+    transform: translate(0, -10px);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(0, -10px);
+    opacity: 0;
+  }
+  30% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  90% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes sec_B {
+  0% {
+    transform: translate(0, -10px);
+    opacity: 0;
+  }
+  30% {
+    transform: translate(0, -10px);
+    opacity: 0;
+  }
+  40% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  90% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes logType {
+  from {
+    stroke: transparent;
+  }
+  to {
+    stroke: #008000;
+  }
+}
+
 /* :hover */
 .nav-item:hover {
   transform: translate(3px, 2px);
 }
 
 .nav-item:hover > .nav-link {
-  text-shadow: 0.5px 0.5px var(--colorDark);
+  text-shadow: none !important;
 }
 
 /*----- Index -----*/
