@@ -339,6 +339,11 @@ h2 {
   padding-right: 10px;
 }
 
+.buttonV:active {
+  box-shadow: 0px 0px #808080;
+  transform: translate(3px, 2px);
+}
+
 /*----- Game -----*/
 
 .puzzle-title {
@@ -365,6 +370,14 @@ h2 {
   height: 400px;
   display: flex;
   border: 2px solid #000000;
+}
+
+.box:hover {
+  background-color: #181d31;
+}
+
+.box:hover > p {
+  color: var(--colorLight);
 }
 
 #box-img {
