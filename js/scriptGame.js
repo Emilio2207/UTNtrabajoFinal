@@ -1,4 +1,9 @@
 /* scroll */
+console.log("El script se está ejecutando");
+
+let flag = false;
+let counter = 0;
+
 const change = () => {
   const { innerHeight, scrollY } = window;
   const nav = document.querySelector(".change-nav");
@@ -49,45 +54,48 @@ function animateSVG(svg) {
   });
 }
 
-/* video */
-const video = document.querySelector("video");
-const playButton = document.getElementById("play");
-const pauseButton = document.getElementById("pause");
-const nav = document.querySelector("nav");
-const display = document.getElementById("displayTime");
-let timeProgression;
+/* Puzzle */
+function start() {
+  const images = document.querySelectorAll("#box-img img");
+  const dropZones = [
+    document.getElementById("releaseOne"),
+    document.getElementById("releaseTwo"),
+    document.getElementById("releaseThree"),
+  ];
 
-const navChange = () => {
-  nav.classList.toggle("fondoNav", window.scrollY > window.innerHeight * 0.35);
-};
+  images.forEach((image) => {
+    image.addEventListener("dragstart", dragged, false);
+  });
 
-const formatTime = (time) => {
-  const minutes = Math.floor(time / 60);
-  const seconds = Math.floor(time % 60);
-  return `${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-};
+  dropZones.forEach((zone) => {
+    zone.addEventListener("dragenter", (e) => e.preventDefault(), false);
+    zone.addEventListener("dragover", (e) => e.preventDefault(), false);
+    zone.addEventListener("drop", released, false);
+  });
+}
 
-setTimeout(() => {
-  display.textContent = "Duración video 04:41";
-}, 100);
+function dragged(e) {
+  console.log("Dragged:", e.target.id);
+  e.dataTransfer.setData("text", e.target.id);
+}
 
-playButton.addEventListener("click", () => {
-  video.play();
-  timeProgression = setInterval(() => {
-    display.textContent = formatTime(video.currentTime);
-  }, 1000);
-});
+async function released(e) {
+  e.preventDefault();
+  console.log("Released:", e.target);
+  const id = e.dataTransfer.getData("text");
+  const imagen = document.getElementById(id);
+  if (imagen) {
+    console.log("Imagen encontrada:", id);
+    imagen.style.display = "none";
+    e.target.innerHTML = `<img src="${imagen.src}" height="400px" width="275px">`;
+    counter++;
+  } else {
+    console.log("Imagen no encontrada:", id);
+  }
+}
 
-pauseButton.addEventListener("click", () => {
-  video.pause();
-  clearInterval(timeProgression);
-});
+function reboot() {
+  window.location.reload();
+}
 
-const toggleClass = (element, className) => {
-  element.classList.toggle(className);
-};
-
-const setTheme = (theme) => {
-  const body = document.querySelector("body");
-  body.className = theme;
-};
+document.addEventListener("DOMContentLoaded", start);
